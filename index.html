@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بورتفوليو جوهريه</title>
+    <style>
+        :root {
+            --navy: #111A24;
+            --off-white: #F3EFE7;
+            --yellow: #F4B84D;
+            --red: #8B2635;
+            --text-dark: #333;
+        }
+        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        /* القسم الأول (الواجهة) */
+        .hero { background-color: var(--navy); color: white; text-align: center; padding: 100px 20px; }
+        .hero img { width: 150px; border-radius: 50%; border: 4px solid var(--yellow); }
+        .hero h1 { color: var(--yellow); font-size: 2.5rem; margin-top: 15px; }
+        .hero p { font-size: 1.2rem; color: #ccc; }
+
+        /* قسم من أنا (About Me) */
+        .about { background-color: var(--off-white); color: var(--text-dark); padding: 60px 10%; display: flex; flex-wrap: wrap; gap: 40px; }
+        .about h2 { color: var(--red); font-size: 2rem; width: 100%; text-align: center; margin-bottom: 20px;}
+        .about-text { flex: 1; min-width: 300px; line-height: 1.8; }
+        .about-stats { flex: 1; min-width: 300px; }
+        .about-stats h3 { color: var(--red); border-bottom: 2px solid var(--red); display: inline-block; }
+
+        /* قسم المهارات (Skills) */
+        .skills { background-color: var(--navy); color: white; padding: 60px 10%; text-align: center; }
+        .skills h2 { color: var(--yellow); margin-bottom: 40px;}
+        .skill-bar { margin: 15px auto; width: 80%; max-width: 400px; display: flex; align-items: center; gap: 15px; }
+        .skill-name { background: var(--yellow); color: var(--navy); padding: 5px 15px; border-radius: 20px; font-weight: bold; width: 50px;}
+        .progress { background: #333; flex: 1; height: 10px; border-radius: 10px; overflow: hidden; }
+        .progress-fill { background: var(--off-white); height: 100%; }
+
+        /* قسم معرض الأعمال (Portfolio - Folder Style) */
+        .portfolio { background-color: var(--off-white); padding: 60px 10%; }
+        .portfolio h2 { text-align: center; color: var(--navy); margin-bottom: 40px;}
+        
+        .tabs { display: flex; justify-content: center; gap: 10px; border-bottom: 4px solid var(--navy); }
+        .tab-btn { background: #ccc; border: none; padding: 15px 30px; cursor: pointer; border-radius: 15px 15px 0 0; font-size: 1.1rem; font-weight: bold; transition: 0.3s; color: var(--text-dark);}
+        .tab-btn.active { background: var(--navy); color: white; margin-bottom: -4px; }
+        
+        .tab-content { display: none; background: var(--off-white); border: 4px solid var(--navy); border-top: none; padding: 40px; border-radius: 0 0 15px 15px; text-align: center; animation: fadeIn 0.5s;}
+        .tab-content.active { display: block; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <!-- الواجهة -->
+    <header class="hero">
+        <!-- ضعي رابط صورتك أو الأفاتار هنا -->
+        <img src="https://via.placeholder.com/150" alt="صورة جوهريه">
+        <h1>مرحباً، أنا جوهريه</h1>
+        <p>مصممة جرافيك ووسائط متعددة</p>
+    </header>
+
+    <!-- من أنا -->
+    <section class="about">
+        <h2>عنّي</h2>
+        <div class="about-text">
+            <p>أنا مصممة شغوفة ببناء هويات بصرية تروي قصصاً وتصنع تواصلاً عاطفياً. أسعى دائماً لتعلم كل جديد وتقديمه بأسلوب إبداعي.</p>
+        </div>
+        <div class="about-stats">
+            <h3>الخبرة</h3>
+            <p>2021 - الآن: مصممة عمل حر</p>
+            <h3>التعليم</h3>
+            <p>بكالوريوس تصميم جرافيك</p>
+        </div>
+    </section>
+
+    <!-- المهارات -->
+    <section class="skills">
+        <h2>مهاراتي التصميمية</h2>
+        <div class="skill-bar">
+            <div class="skill-name">Ai</div>
+            <div class="progress"><div class="progress-fill" style="width: 90%;"></div></div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-name">Ps</div>
+            <div class="progress"><div class="progress-fill" style="width: 80%;"></div></div>
+        </div>
+    </section>
+
+    <!-- معرض الأعمال (ملفات الأرشيف) -->
+    <section class="portfolio">
+        <h2>معرض الأعمال</h2>
+        <!-- أزرار التبويبات -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'branding')">01 تصميم الهويات</button>
+            <button class="tab-btn" onclick="openTab(event, 'animation')">02 الرسوم المتحركة</button>
+            <button class="tab-btn" onclick="openTab(event, 'print')">03 المطبوعات</button>
+        </div>
+
+        <!-- محتوى التبويبات -->
+        <div id="branding" class="tab-content active">
+            <h3>مشاريع تصميم الهويات البصرية</h3>
+            <p>هنا يمكنك استبدال هذا النص بصور أعمالك في الهويات البصرية...</p>
+        </div>
+        <div id="animation" class="tab-content">
+            <h3>أعمال الرسوم المتحركة (2D)</h3>
+            <p>هنا يمكنك عرض فيديوهات أو صور لرسوماتك المتحركة...</p>
+        </div>
+        <div id="print" class="tab-content">
+            <h3>تصاميم المطبوعات</h3>
+            <p>هنا يمكنك عرض الملصقات وتصاميم التغليف الخاصة بك...</p>
+        </div>
+    </section>
+
+    <!-- سكربت تفاعل التبويبات -->
+    <script>
+        function openTab(evt, tabName) {
+            let i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
